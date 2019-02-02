@@ -4,15 +4,15 @@ import clearNode from './clearNode.js';
 function createStartPage(){
 
     const mainContainer = document.createElement("div");
-    mainContainer.classList.add("stContainer");
+    mainContainer.classList.add("create-start-page__div-main-container");
     document.body.appendChild(mainContainer);
 
     const startMenu = document.createElement("div");
-    startMenu.classList.add("stStartMenu");
+    startMenu.classList.add("create-start-page__div-start-menu");
     mainContainer.appendChild(startMenu);
 
     const btnNewGame = document.createElement("input");
-    btnNewGame.classList.add("stBtnNewGame");
+    btnNewGame.classList.add("create-start-page__input-btn-new-game");
     btnNewGame.setAttribute("type", "button");
     btnNewGame.setAttribute("value", "Новая игра");
     startMenu.appendChild(btnNewGame);
@@ -22,7 +22,7 @@ function createStartPage(){
       });
 
     const btnResult = document.createElement("input");
-    btnResult.classList.add("stBtnResult");
+    btnResult.classList.add("create-start-page__input-btn-result");
     btnResult.setAttribute("type", "button");
     btnResult.setAttribute("value", "Результаты");
     startMenu.appendChild(btnResult);
@@ -31,7 +31,7 @@ function createStartPage(){
     });
 
     const btnAbout = document.createElement("input");
-    btnAbout.classList.add("stBtnAbout");
+    btnAbout.classList.add("create-start-page__input-btn-about");
     btnAbout.setAttribute("type", "button");
     btnAbout.setAttribute("value", "О игре");
     startMenu.appendChild(btnAbout);
