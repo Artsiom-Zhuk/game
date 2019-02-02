@@ -1,0 +1,99 @@
+.stHeadCharacterComp {
+    margin-top: 10px;
+    width: 150px;
+    height: 150px;
+    background-image: url("../image/head-2.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .stFaceCharacterComp {
+    width: 79px;
+    height: 63px;
+    background-image: url("../image/face.png");
+  }
+  
+  .stContainerForBodyArmsCharacterComp {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .stContainerForBodyCharacterComp {
+    width: 200px;
+    height: 250px;
+    background-image: url("../image/body-1.png");
+  }
+  
+  .stContainerForLeftArmCharacterComp {
+    width: 100px;
+    height: 250px;
+    position: relative;
+  }
+  
+  .stLeftArmCharacterComp {
+    width: 45px;
+    height: 115px;
+    background-image: url("../image/arm-1.png");
+    position: absolute;
+    left: 71.5px;
+    top: 85px;
+    transform: rotate(15deg);
+  }
+  
+  .stContainerForRightArmCharacterComp {
+    width: 100px;
+    height: 250px;
+    position: relative;
+  }
+  
+  .stRightArmCharacterComp {
+    width: 45px;
+    height: 115px;
+    background-image: url("../image/arm-1.png");
+    position: absolute;
+    left: -14px;
+    top: 85px;
+    transform: rotate(-15deg);
+  }
+  
+  .stContainerForFeetCharacterComp {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .stContainerForLeftFootCharacterComp {
+    width: 50%;
+    height: 150px;
+    position: relative;
+  }
+  
+  .stLeftFootComp {
+    height: 150px;
+    width: 6px;
+    background-image: url("../image/foot-1.png");
+    position: absolute;
+    right: 50px;
+    top: -10px;
+    transform: rotate(20deg);
+  }
+  
+  .stContainerForRightFootCharacterComp {
+    width: 50%;
+    height: 150px;
+    position: relative;
+  }
+  
+  .stRightFootComp {
+    height: 150px;
+    width: 6px;
+    background-image: url("../image/foot-1.png");
+    position: absolute;
+    left: 50px;
+    top: -10px;
+    transform: rotate(-20deg);
+  }

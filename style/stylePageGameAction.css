@@ -1,0 +1,161 @@
+.stGameActionContainer {
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgb(220, 223, 223); */
+    position: relative;
+    /* background-image: url("../fon9.jpg"); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.stHeaderContainer {
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stNameHealthPlayer{
+    height: 100%;
+    width:40%;
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stHealthPlayer{
+    height: 100%;
+     width: 30%;
+    background-color: yellowgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color:white;
+}
+
+.stNamePlayer{
+    height: 100%;
+    width:70%;
+    background-color: blue;
+}
+
+.stLevel{
+    height: 100%;
+    width:30%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color:white;
+}
+
+.stNameHealthBot{
+    height: 100%;
+    width:40%;
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stHealthBot{
+    height: 100%;
+     width: 30%;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color:white;
+}
+
+.stNameBot{
+    height: 100%;
+    width:70%;
+    background-color: orange;
+}
+
+.stGround {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+        background-image: url("../fon5.jpg");
+    /* background-repeat: no-repeat; */
+    background-size: 100% 700%;
+}
+
+.stContainerForBtn {
+    width: 30%;
+    height: 50px;
+    /* background-color: yellowgreen; */
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    top: 120px;
+    left: 35%;
+}
+
+.stBtnAttack{
+width: 40%;
+height: 50px;
+background: linear-gradient(to right, red,  gold);
+outline: none;
+color: white;
+font-size: 20px;
+}
+
+.stBtnAttack:hover{
+    font-size: 28px;
+}
+
+.stBtnHealth{
+    width: 40%;
+    height: 50px;
+    background: linear-gradient(to left, blue, green);
+    outline: none;
+    color: white;
+font-size: 20px;
+}
+
+.stBtnHealth:hover{
+    font-size: 28px;
+}
+
+.stCharacterPlayer {
+    left: 50px;
+    top: 170px;
+    width: 400px;
+    height: 570px;
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: red; */
+}
+
+.stCharacterComputer {
+    right: 50px;
+    top: 170px;
+    width: 400px;
+    height: 570px;
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: blue; */
+}
