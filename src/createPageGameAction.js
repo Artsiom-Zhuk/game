@@ -7,7 +7,7 @@ function createPageGameAction(){
   let nowHealtPlayer = 100;
   let nowHealtBot = 100;
 
-  const idContainerForShowCharacterPlayer = document.getElementById("idContainerForShowCharacter");
+  const idContainerForShowCharacterPlayer = document.getElementById("idContainerShowCharacter");
    idContainerForShowCharacterPlayer.style.position = "static";
 
     const gameActionContainer = document.createElement("div");

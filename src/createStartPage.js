@@ -1,4 +1,4 @@
-import createPageForChooseCharacter from './createPageForChooseCharacter.js';
+import createPageChooseCharacter from './createPageChooseCharacter.js';
 import clearNode from './clearNode.js';
 
 function createStartPage(){
@@ -18,7 +18,7 @@ function createStartPage(){
     startMenu.appendChild(btnNewGame);
     btnNewGame.addEventListener("click", () => {
         clearNode(mainContainer);
-        createPageForChooseCharacter();
+        createPageChooseCharacter();
       });
 
     const btnResult = document.createElement("input");
