@@ -1,92 +1,89 @@
 import createBot from './createBot.js';
 import modalWindowAttack from './modalWindowAttack.js';
 
-function createPageGameAction(){
+function pageGameAction(){
 
-  let nowLevel = 1;
-  let nowHealtPlayer = 100;
-  let nowHealtBot = 100;
+  let currentLevel = 1;
+  let currentHealtPlayer = 100;
+  let currentHealtBot = 100;
 
-  const idContainerForShowCharacterPlayer = document.getElementById("idContainerShowCharacter");
-   idContainerForShowCharacterPlayer.style.position = "static";
+  const idContainerShowPlayer = document.getElementById("idContainerShowCharacter");
+  idContainerShowPlayer.style.position = "static";
 
-    const gameActionContainer = document.createElement("div");
-    gameActionContainer.classList.add("stGameActionContainer");
-    document.body.appendChild(gameActionContainer);
+  const mainContainer = document.createElement("div");
+  mainContainer.classList.add("page-game-action__main-container");
+  document.body.appendChild(mainContainer);
 
-    const headerContainer = document.createElement("div");
-    headerContainer.classList.add("stHeaderContainer");
-    gameActionContainer.appendChild(headerContainer);
+  const header = document.createElement("div");
+  header.classList.add("page-game-action__header");
+  mainContainer.appendChild(header);
 
+  const nameAndHealthPlayer = document.createElement("div");
+  nameAndHealthPlayer.classList.add("page-game-action__name-and-health-player");
+  header.appendChild(nameAndHealthPlayer);
 
-    const nameHealthPlayer = document.createElement("div");
-    nameHealthPlayer.classList.add("stNameHealthPlayer");
-    headerContainer.appendChild(nameHealthPlayer);
+  const healthPlayer = document.createElement("div");
+  healthPlayer.classList.add("page-game-action__health-player");
+  nameAndHealthPlayer.appendChild(healthPlayer);
+  healthPlayer.innerHTML = "+ " + currentHealtPlayer;
 
-    const healthPlayer = document.createElement("div");
-    healthPlayer.classList.add("stHealthPlayer");
-    nameHealthPlayer.appendChild(healthPlayer);
-    healthPlayer.innerHTML = "+ " + nowHealtPlayer;
+  const namePlayer = document.createElement("div");
+  namePlayer.classList.add("page-game-action__name-player");
+  nameAndHealthPlayer.appendChild(namePlayer);
+  
+  const level = document.createElement("div");
+  level.classList.add("page-game-action__level");
+  header.appendChild(level);
+  level.innerHTML = "Уровень " + currentLevel;
 
-    const namePlayer = document.createElement("div");
-    namePlayer.classList.add("stNamePlayer");
-    nameHealthPlayer.appendChild(namePlayer);
-    // namePlayer.innerHTML = "";
+  const nameAndHealthBot = document.createElement("div");
+  nameAndHealthBot.classList.add("page-game-action__name-and-health-bot");
+  header.appendChild(nameAndHealthBot);
 
+  const nameBot = document.createElement("div");
+  nameBot.classList.add("page-game-action__name-bot");
+  nameAndHealthBot.appendChild(nameBot);
 
-    const level = document.createElement("div");
-    level.classList.add("stLevel");
-    headerContainer.appendChild(level);
-    level.innerHTML = "Уровень " + nowLevel;
+  const healthBot = document.createElement("div");
+  healthBot.classList.add("page-game-action__health-bot");
+  nameAndHealthBot.appendChild(healthBot);
+  healthBot.innerHTML = "+ " + currentHealtBot;
 
-    const nameHealthBot = document.createElement("div");
-    nameHealthBot.classList.add("stNameHealthBot");
-    headerContainer.appendChild(nameHealthBot);
+  const ground = document.createElement("div");
+  ground.classList.add("page-game-action__ground");
+  mainContainer.appendChild(ground);
 
-    const nameBot = document.createElement("div");
-    nameBot.classList.add("stNameBot");
-    nameHealthBot.appendChild(nameBot);
+  const containerButtons = document.createElement("div");
+  containerButtons.classList.add("page-game-action__container-buttons");
+  mainContainer.appendChild(containerButtons);
 
-    const healthBot = document.createElement("div");
-    healthBot.classList.add("stHealthBot");
-    nameHealthBot.appendChild(healthBot);
-    healthBot.innerHTML = "+ " + nowHealtBot;
+  const btnAttack = document.createElement("input");
+  btnAttack.setAttribute("type", "button");
+  btnAttack.setAttribute("value", "Атаковать");
+  btnAttack.classList.add("page-game-action__btn-attack");
+  containerButtons.appendChild(btnAttack);
+  btnAttack.addEventListener("click", () => {
+    modalWindowAttack();
+  });
 
-    const ground = document.createElement("div");
-    ground.classList.add("stGround");
-    gameActionContainer.appendChild(ground);
+  const btnHealth = document.createElement("input");
+  btnHealth.setAttribute("type", "button");
+  btnHealth.setAttribute("value", "Лечиться");
+  btnHealth.classList.add("page-game-action__btn-health");
+  containerButtons.appendChild(btnHealth);
+  btnHealth.addEventListener("click", () => {
+    alert("health");
+  });
 
-    const containerForBtn = document.createElement("div");
-    containerForBtn.classList.add("stContainerForBtn");
-    gameActionContainer.appendChild(containerForBtn);
+  const containerPlayer = document.createElement("div");
+  containerPlayer.classList.add("page-game-action__container-player");
+  mainContainer.appendChild(containerPlayer);
+  containerPlayer.appendChild(idContainerShowPlayer);
 
-    const btnAttack = document.createElement("input");
-    btnAttack.setAttribute("type", "button");
-    btnAttack.setAttribute("value", "Атаковать");
-    btnAttack.classList.add("stBtnAttack");
-    containerForBtn.appendChild(btnAttack);
-    btnAttack.addEventListener("click", () => {
-      modalWindowAttack();
-    });
-
-    const btnHealth = document.createElement("input");
-    btnHealth.setAttribute("type", "button");
-    btnHealth.setAttribute("value", "Лечиться");
-    btnHealth.classList.add("stBtnHealth");
-    containerForBtn.appendChild(btnHealth);
-    btnHealth.addEventListener("click", () => {
-      alert("health");
-    });
-
-    const characterPlayer = document.createElement("div");
-    characterPlayer.classList.add("stCharacterPlayer");
-    gameActionContainer.appendChild(characterPlayer);
-    characterPlayer.appendChild(idContainerForShowCharacterPlayer);
-
-    const characterComputer = document.createElement("div");
-    characterComputer.classList.add("stCharacterComputer");
-    gameActionContainer.appendChild(characterComputer);
-    createBot(characterComputer);
+  const containerBot = document.createElement("div");
+  containerBot.classList.add("page-game-action__container-bot");
+  mainContainer.appendChild(containerBot);
+  createBot(containerBot);
 }
 
-export default createPageGameAction;
+export default pageGameAction;
