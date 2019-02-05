@@ -6,6 +6,7 @@
     /* background-image: url("../fon9.jpg"); */
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    overflow: hidden;
 }
 
 .stHeaderContainer {
@@ -136,7 +137,7 @@ font-size: 20px;
 
 .stCharacterPlayer {
     left: 50px;
-    top: 170px;
+    top: 120px;
     width: 400px;
     height: 570px;
     border-radius: 20px;
@@ -149,7 +150,7 @@ font-size: 20px;
 
 .stCharacterComputer {
     right: 50px;
-    top: 170px;
+    top: 120px;
     width: 400px;
     height: 570px;
     border-radius: 20px;

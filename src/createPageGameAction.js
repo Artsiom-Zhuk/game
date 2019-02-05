@@ -1,4 +1,4 @@
-import createCharacterComputer from './createCharacterComputer.js';
+import createBot from './createBot.js';
 import modalWindowAttack from './modalWindowAttack.js';
 
 function createPageGameAction(){
@@ -86,7 +86,7 @@ function createPageGameAction(){
     const characterComputer = document.createElement("div");
     characterComputer.classList.add("stCharacterComputer");
     gameActionContainer.appendChild(characterComputer);
-    createCharacterComputer(characterComputer);
+    createBot(characterComputer);
 }
 
 export default createPageGameAction;
