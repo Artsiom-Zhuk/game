@@ -1,0 +1,17 @@
+function containerChooseTask(btn1, btn2){
+
+    const mainContainer = document.createElement("form");
+    mainContainer.setAttribute("id", "idMainContainer");
+    mainContainer.classList.add("container-choose-task__form-main-container");
+
+    const containerButtons = document.createElement("div");
+    containerButtons.classList.add("container-choose-task__div-container-buttons");
+    mainContainer.appendChild(containerButtons);
+
+    containerButtons.appendChild(btn1);
+    containerButtons.appendChild(btn2);
+
+    return mainContainer;
+}
+    
+export default containerChooseTask;

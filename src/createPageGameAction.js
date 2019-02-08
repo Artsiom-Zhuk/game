@@ -1,5 +1,11 @@
 import createBot from './createBot.js';
-import modalWindowAttack from './modalWindowAttack.js';
+import modalWindow from './modalWindow.js';
+
+import containerChooseTask from './containerChooseTask';
+import btnAttackArithmetic from './btnAttackArithmetic';
+import btnAttackTranslation from './btnAttackTranslation';
+import btnHealthArithmetic from './btnHealthArithmetic';
+import btnHealthTranslation from './btnHealthTranslation';
 
 function pageGameAction(){
 
@@ -63,7 +69,10 @@ function pageGameAction(){
   btnAttack.classList.add("page-game-action__btn-attack");
   containerButtons.appendChild(btnAttack);
   btnAttack.addEventListener("click", () => {
-    modalWindowAttack();
+    const buttonAttackArithmetic = btnAttackArithmetic();
+    const buttonAttackTranslation = btnAttackTranslation();
+    const containerButtons = containerChooseTask(buttonAttackArithmetic,buttonAttackTranslation);
+    modalWindow(containerButtons);
   });
 
   const btnHealth = document.createElement("input");
@@ -72,7 +81,10 @@ function pageGameAction(){
   btnHealth.classList.add("page-game-action__btn-health");
   containerButtons.appendChild(btnHealth);
   btnHealth.addEventListener("click", () => {
-    alert("health");
+    const buttonHealthArithmetic = btnHealthArithmetic();
+    const buttonHealthTranslation = btnHealthTranslation();
+    const containerButtons = containerChooseTask(buttonHealthArithmetic, buttonHealthTranslation);
+    modalWindow(containerButtons);
   });
 
   const containerPlayer = document.createElement("div");

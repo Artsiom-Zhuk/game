@@ -1,0 +1,9 @@
+.btn-attack-arithmetic__input-btn-attack-arithmetic,
+.btn-attack-translation__input-btn-attack-translation,
+.btn-health-arithmetic__input-btn-health-arithmetic,
+.btn-health-translation__input-btn-health-translation {
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    outline: none;
+}
