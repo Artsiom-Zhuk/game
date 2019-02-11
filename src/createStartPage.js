@@ -1,5 +1,7 @@
 import pageChooseCharacter from './createPageChooseCharacter.js';
 import clearNode from './clearNode.js';
+import renderTableScore from "./renderTableScore";
+import pageAboutGame from "./pageAboutGame";
 
 function startPage(){
 
@@ -7,6 +9,11 @@ function startPage(){
     mainContainer.classList.add("start-page__div-main-container");
     document.body.appendChild(mainContainer);
 
+    const titleGame = document.createElement("div");
+    titleGame.classList.add("start-page__div-title-game");
+    mainContainer.appendChild(titleGame);
+    titleGame.innerHTML = "<h1>Way of the Samurai</h1>";
+    
     const startMenu = document.createElement("div");
     startMenu.classList.add("start-page__div-start-menu");
     mainContainer.appendChild(startMenu);
@@ -27,7 +34,8 @@ function startPage(){
     btnResult.setAttribute("value", "Результаты");
     startMenu.appendChild(btnResult);
     btnResult.addEventListener("click", () => {
-        alert("Result");
+        clearNode(mainContainer);
+        renderTableScore();
     });
 
     const btnAbout = document.createElement("input");
@@ -36,7 +44,8 @@ function startPage(){
     btnAbout.setAttribute("value", "О игре");
     startMenu.appendChild(btnAbout);
     btnAbout.addEventListener("click", () => {
-        alert("About");
+        clearNode(mainContainer);
+        pageAboutGame();
     });
 }
 

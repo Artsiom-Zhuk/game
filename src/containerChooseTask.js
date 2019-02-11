@@ -1,4 +1,4 @@
-function containerChooseTask(btn1, btn2){
+function containerChooseTask(btn1, btn2, btn3){
 
     const mainContainer = document.createElement("form");
     mainContainer.setAttribute("id", "idMainContainer");
@@ -10,6 +10,7 @@ function containerChooseTask(btn1, btn2){
 
     containerButtons.appendChild(btn1);
     containerButtons.appendChild(btn2);
+    containerButtons.appendChild(btn3);
 
     return mainContainer;
 }

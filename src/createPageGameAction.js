@@ -1,23 +1,26 @@
 import createBot from './createBot.js';
 import modalWindow from './modalWindow.js';
+import randomNum from './randomNum';
 
 import containerChooseTask from './containerChooseTask';
 import btnAttackArithmetic from './btnAttackArithmetic';
 import btnAttackTranslation from './btnAttackTranslation';
 import btnHealthArithmetic from './btnHealthArithmetic';
 import btnHealthTranslation from './btnHealthTranslation';
+import closeModalWindow from "./closeModalWindow";
+
+import {firstname} from './nameBot';
+import {surname} from './nameBot';;
+import {patronymic} from './nameBot';
 
 function pageGameAction(){
-
-  let currentLevel = 1;
-  let currentHealtPlayer = 100;
-  let currentHealtBot = 100;
 
   const idContainerShowPlayer = document.getElementById("idContainerShowCharacter");
   idContainerShowPlayer.style.position = "static";
 
   const mainContainer = document.createElement("div");
   mainContainer.classList.add("page-game-action__main-container");
+  mainContainer.setAttribute("id","idMainContainerGameAction")
   document.body.appendChild(mainContainer);
 
   const header = document.createElement("div");
@@ -28,19 +31,32 @@ function pageGameAction(){
   nameAndHealthPlayer.classList.add("page-game-action__name-and-health-player");
   header.appendChild(nameAndHealthPlayer);
 
-  const healthPlayer = document.createElement("div");
+  const healthPlayer = document.createElement("input");
+  healthPlayer.setAttribute("type","button");
+  healthPlayer.setAttribute("value","100");
   healthPlayer.classList.add("page-game-action__health-player");
+  healthPlayer.setAttribute("id","idHealthPlayer");
   nameAndHealthPlayer.appendChild(healthPlayer);
-  healthPlayer.innerHTML = "+ " + currentHealtPlayer;
+  healthPlayer.addEventListener("click", () => {
+    alert("у вас +"+healthPlayer.value+" здоровья!");
+  });
 
   const namePlayer = document.createElement("div");
+  namePlayer.setAttribute("id","idNamePlayer");
   namePlayer.classList.add("page-game-action__name-player");
+  const idInputName = document.getElementById("idInputName");
+  namePlayer.innerHTML = idInputName.value;
   nameAndHealthPlayer.appendChild(namePlayer);
-  
-  const level = document.createElement("div");
+
+  const level = document.createElement("input");
+  level.setAttribute("type","button");
+  level.setAttribute("value","1");
   level.classList.add("page-game-action__level");
+  level.setAttribute("id","idLevel");
   header.appendChild(level);
-  level.innerHTML = "Уровень " + currentLevel;
+  level.addEventListener("click", () => {
+    alert("Вы находитесь на "+level.value+" уровне!");
+  });
 
   const nameAndHealthBot = document.createElement("div");
   nameAndHealthBot.classList.add("page-game-action__name-and-health-bot");
@@ -48,12 +64,22 @@ function pageGameAction(){
 
   const nameBot = document.createElement("div");
   nameBot.classList.add("page-game-action__name-bot");
-  nameAndHealthBot.appendChild(nameBot);
+  const indexFirstname = randomNum(0,firstname.length-1);
+  const indexSurname = randomNum(0,surname.length-1);    
+  const indexPatronymic= randomNum(0,patronymic.length-1);  
+  const fullNameBot = firstname[indexFirstname] + surname[indexSurname] + patronymic[indexPatronymic]
+  nameBot.innerHTML = fullNameBot;   
+  nameAndHealthBot.appendChild(nameBot);                                                                            
 
-  const healthBot = document.createElement("div");
+  const healthBot = document.createElement("input");
+  healthBot.setAttribute("type","button");
+  healthBot.setAttribute("value","100");
   healthBot.classList.add("page-game-action__health-bot");
+  healthBot.setAttribute("id","idHealthBot");
   nameAndHealthBot.appendChild(healthBot);
-  healthBot.innerHTML = "+ " + currentHealtBot;
+  healthBot.addEventListener("click", () => {
+    alert("у противника +" +healthBot.value + " здоровья!");
+  });
 
   const ground = document.createElement("div");
   ground.classList.add("page-game-action__ground");
@@ -69,9 +95,10 @@ function pageGameAction(){
   btnAttack.classList.add("page-game-action__btn-attack");
   containerButtons.appendChild(btnAttack);
   btnAttack.addEventListener("click", () => {
-    const buttonAttackArithmetic = btnAttackArithmetic();
+    const buttonAttackArithmetic = btnAttackArithmetic(); 
     const buttonAttackTranslation = btnAttackTranslation();
-    const containerButtons = containerChooseTask(buttonAttackArithmetic,buttonAttackTranslation);
+    const buttonBack = closeModalWindow();
+    const containerButtons = containerChooseTask(buttonAttackArithmetic,buttonAttackTranslation,buttonBack);
     modalWindow(containerButtons);
   });
 
@@ -81,18 +108,25 @@ function pageGameAction(){
   btnHealth.classList.add("page-game-action__btn-health");
   containerButtons.appendChild(btnHealth);
   btnHealth.addEventListener("click", () => {
-    const buttonHealthArithmetic = btnHealthArithmetic();
-    const buttonHealthTranslation = btnHealthTranslation();
-    const containerButtons = containerChooseTask(buttonHealthArithmetic, buttonHealthTranslation);
-    modalWindow(containerButtons);
+    if(healthPlayer.value < 91){
+      const buttonHealthArithmetic = btnHealthArithmetic();
+      const buttonHealthTranslation = btnHealthTranslation();
+      const buttonBack = closeModalWindow();
+      const containerButtons = containerChooseTask(buttonHealthArithmetic, buttonHealthTranslation,buttonBack);
+      modalWindow(containerButtons);
+    } else {
+      alert("У вас достаточно здоровья!");
+    }
   });
 
   const containerPlayer = document.createElement("div");
+  containerPlayer.setAttribute("id","idContainerPlayer");
   containerPlayer.classList.add("page-game-action__container-player");
   mainContainer.appendChild(containerPlayer);
   containerPlayer.appendChild(idContainerShowPlayer);
 
   const containerBot = document.createElement("div");
+  containerBot.setAttribute("id","idContainerBot");
   containerBot.classList.add("page-game-action__container-bot");
   mainContainer.appendChild(containerBot);
   createBot(containerBot);

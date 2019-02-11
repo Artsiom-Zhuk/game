@@ -1,3 +1,7 @@
+import createPageGameAction from './createPageGameAction.js';
+import clearNode from './clearNode';
+import validationRepeatName from "./validationRepeatName";
+
 function pageChooseCharacter() {
 
   const mainContainer = document.createElement("div");
@@ -21,8 +25,14 @@ function pageChooseCharacter() {
   btnPlay.classList.add("page-choose-character__input-btn-play");
   mainContainer.appendChild(btnPlay);
 
-  btnPlay.addEventListener("click", () => {
-    alert("name");
+  btnPlay.addEventListener("click", async () => {
+      if(inputName.value.trim().length !== 0 && !(await validationRepeatName(inputName.value))){
+          createPageGameAction();
+          clearNode(mainContainer);
+    } else {
+      inputName.style.border = "solid red";
+      alert("Ошибка! Вы не указали свое имя или имя уже занято!");
+    } 
   });
   
   const headCharacter = document.createElement("div");
@@ -120,8 +130,9 @@ function pageChooseCharacter() {
 
   const inputName = document.createElement("input");
   inputName.setAttribute("type", "text");
+  inputName.setAttribute("id", "idInputName");
   inputName.setAttribute("placeholder", "Введите имя");
-  inputName.setAttribute("maxlength", "6");
+  inputName.setAttribute("maxlength", "10");
   inputName.classList.add("page-choose-character__input-input-name");
   containerInputName.appendChild(inputName);
 

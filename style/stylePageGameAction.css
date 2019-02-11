@@ -20,7 +20,6 @@
 .page-game-action__name-and-health-player{
     height: 100%;
     width:40%;
-    background-color: green;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -28,37 +27,49 @@
 }
 
 .page-game-action__health-player{
-    height: 100%;
+    height: 80%;
     width: 30%;
-    background-color: yellowgreen;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: black;
     font-size: 30px;
-    color:white;
+    color:green;
+    outline: none;
+    border: 0;
+    border-radius: 200px;
+    border: 1px solid white;
 }
 
 .page-game-action__name-player{
     height: 100%;
     width:70%;
-    background-color: blue;
+    background-color: black;
+    color:goldenrod;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
 }
 
 .page-game-action__level{
     height: 100%;
     width:30%;
-    background-color: red;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    color:white;
+    font-size: 50px;
+    color:green;
+    outline: none;
+    border: 0;
+}
+
+.page-game-action__level:hover {
+    color:yellow;
+    font-size: 70px;
 }
 
 .page-game-action__name-and-health-bot{
     height: 100%;
     width:40%;
-    background-color: green;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -66,20 +77,30 @@
 }
 
 .page-game-action__health-bot{
+    height: 80%;
+    width: 30%;
+    background-color: black;
+    font-size: 30px;
+    color:green;
+    outline: none;
+    border: 0;
+    border-radius: 200px;
+    border: 1px solid white;
+}
+
+.page-game-action__health-bot:hover {
+    color:green;
+}
+
+.page-game-action__name-bot {
     height: 100%;
-     width: 30%;
-    background-color: pink;
+    width:70%;
+    background-color: black;
+    color:goldenrod;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    color:white;
-}
-
-.page-game-action__name-bot{
-    height: 100%;
-    width:70%;
-    background-color: orange;
 }
 
 .page-game-action__ground {

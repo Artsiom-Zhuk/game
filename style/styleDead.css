@@ -1,0 +1,7 @@
+#idContainerBot{
+    transition: top 10s, transform 10s, right 10s;
+}
+
+#idContainerPlayer{
+    transition: top 10s, transform 10s, right 10s;
+}
