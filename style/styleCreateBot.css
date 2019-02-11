@@ -1,0 +1,99 @@
+.create-bot__container-head-bot {
+    margin-top: 10px;
+    width: 150px;
+    height: 150px;
+    background-image: url("../image/head-2.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .create-bot__face-bot {
+    width: 79px;
+    height: 63px;
+    background-image: url("../image/face.png");
+  }
+  
+  .create-bot__container-body-bot {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .create-bot__body-bot {
+    width: 200px;
+    height: 250px;
+    background-image: url("../image/body-1.png");
+  }
+  
+  .create-bot__container-left-arm-bot {
+    width: 100px;
+    height: 250px;
+    position: relative;
+  }
+  
+  .create-bot__left-arm-bot {
+    width: 45px;
+    height: 115px;
+    background-image: url("../image/arm-1.png");
+    position: absolute;
+    left: 71.5px;
+    top: 85px;
+    transform: rotate(15deg);
+  }
+  
+  .create-bot__container-right-arm-bot {
+    width: 100px;
+    height: 250px;
+    position: relative;
+  }
+  
+  .create-bot__right-arm-bot {
+    width: 45px;
+    height: 115px;
+    background-image: url("../image/arm-1.png");
+    position: absolute;
+    left: -14px;
+    top: 85px;
+    transform: rotate(-15deg);
+  }
+  
+  .create-bot__container-feet-bot {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .create-bot__container-left-foot-bot {
+    width: 50%;
+    height: 150px;
+    position: relative;
+  }
+  
+  .create-bot__left-foot-bot {
+    height: 150px;
+    width: 6px;
+    background-image: url("../image/foot-1.png");
+    position: absolute;
+    right: 50px;
+    top: -10px;
+    transform: rotate(20deg);
+  }
+  
+  .create-bot__container-right-foot-bot {
+    width: 50%;
+    height: 150px;
+    position: relative;
+  }
+  
+  .create-bot__right-foot-bot {
+    height: 150px;
+    width: 6px;
+    background-image: url("../image/foot-1.png");
+    position: absolute;
+    left: 50px;
+    top: -10px;
+    transform: rotate(-20deg);
+  }

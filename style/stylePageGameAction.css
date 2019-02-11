@@ -1,0 +1,174 @@
+.page-game-action__main-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-game-action__header {
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-game-action__name-and-health-player{
+    height: 100%;
+    width:40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-game-action__health-player{
+    height: 80%;
+    width: 30%;
+    background-color: black;
+    font-size: 30px;
+    color:green;
+    outline: none;
+    border: 0;
+    border-radius: 200px;
+    border: 1px solid white;
+}
+
+.page-game-action__name-player{
+    height: 100%;
+    width:70%;
+    background-color: black;
+    color:goldenrod;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.page-game-action__level{
+    height: 100%;
+    width:30%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color:green;
+    outline: none;
+    border: 0;
+}
+
+.page-game-action__level:hover {
+    color:yellow;
+    font-size: 70px;
+}
+
+.page-game-action__name-and-health-bot{
+    height: 100%;
+    width:40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-game-action__health-bot{
+    height: 80%;
+    width: 30%;
+    background-color: black;
+    font-size: 30px;
+    color:green;
+    outline: none;
+    border: 0;
+    border-radius: 200px;
+    border: 1px solid white;
+}
+
+.page-game-action__health-bot:hover {
+    color:green;
+}
+
+.page-game-action__name-bot {
+    height: 100%;
+    width:70%;
+    background-color: black;
+    color:goldenrod;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.page-game-action__ground {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to top,  rgb(50, 50, 50),  rgb(100, 100, 100), rgb(180, 180, 180));
+}
+
+.page-game-action__container-buttons {
+    width: 30%;
+    height: 50px;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    top: 120px;
+    left: 35%;
+}
+
+.page-game-action__btn-attack{
+    width: 40%;
+    height: 50px;
+    background: linear-gradient(to right, red,  gold);
+    outline: none;
+    color: white;
+    font-size: 20px;
+}
+
+.page-game-action__btn-attack:hover{
+    font-size: 28px;
+}
+
+.page-game-action__btn-health{
+    width: 40%;
+    height: 50px;
+    background: linear-gradient(to left, blue, green);
+    outline: none;
+    color: white;
+    font-size: 20px;
+}
+
+.page-game-action__btn-health:hover{
+    font-size: 28px;
+}
+
+.page-game-action__container-player {
+    left: 50px;
+    top: 150px;
+    width: 400px;
+    height: 570px;
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-game-action__container-bot {
+    right: 50px;
+    top: 150px;
+    width: 400px;
+    height: 570px;
+    border-radius: 20px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
